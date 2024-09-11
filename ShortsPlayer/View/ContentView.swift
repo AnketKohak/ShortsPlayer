@@ -16,7 +16,12 @@ struct ContentView: View {
                     QueryTag(query: searchQuery, isSelected:false)
                     
                 }
+                
             }
+            ScrollView{
+                VideoCard(video: previewVideo)
+            }
+            .frame(maxWidth: .infinity)
         }
         .background(Color("AccentColor"))
     }
