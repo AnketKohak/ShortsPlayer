@@ -41,8 +41,11 @@ class VideoManager:ObservableObject {
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
             let decodeData = try decoder.decode(ResponseBody.self, from: data)
-            self.videos = []
-            self.videos = decodeData.videos
+            DispatchQueue.main.async {
+                self.videos = []
+                self.videos = decodeData.videos
+            }
+            
         } catch{
             print("error fetching data from Pexels: \(error)")
             
