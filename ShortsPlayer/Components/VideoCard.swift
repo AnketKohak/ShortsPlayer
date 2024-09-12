@@ -27,7 +27,7 @@ struct VideoCard: View {
                     Text("\(video.duration) sec")
                         .font(.caption)
                         .bold()
-                    Text("By  XYZ")
+                    Text("By  \(video.user.name)")
                         .font(.caption).bold()
                         .multilineTextAlignment(.leading)
                 }
